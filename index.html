@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Bootstrap-tabx : Bootstrap标签页扩展" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Bootstrap-tabx</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hanwei59/bootstrap-tabx">View on GitHub</a>
+
+          <h1 id="project_title">Bootstrap-tabx</h1>
+          <h2 id="project_tagline">Bootstrap标签页扩展</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hanwei59/bootstrap-tabx/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hanwei59/bootstrap-tabx/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="bootstrap-tabx" class="anchor" href="#bootstrap-tabx"><span class="octicon octicon-link"></span></a>bootstrap-tabx</h1>
+
+<p>bootstrap-tabx为bootstrap-tab添加了新增标签页和关闭标签页的功能。</p>
+
+<h2>
+<a name="%E7%94%A8%E6%B3%95%E7%A4%BA%E4%BE%8B" class="anchor" href="#%E7%94%A8%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="octicon octicon-link"></span></a>用法示例</h2>
+
+<h3>
+<a name="%E9%9D%99%E6%80%81html" class="anchor" href="#%E9%9D%99%E6%80%81html"><span class="octicon octicon-link"></span></a>静态Html</h3>
+
+<pre><code>&lt;div class="container-fluid"&gt;
+    &lt;div class="row-fluid"&gt;
+        &lt;div class="span2"&gt;
+            &lt;ul class="nav nav-list"&gt;
+                &lt;li&gt;&lt;a href="#tab3" link="http://www.ofpay.com"&gt;欧飞网&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#tab4" link="http://www.qianmi.com"&gt;千米网&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#tab5" link="http://www.gonghuo.com"&gt;供货网&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="span10"&gt;
+            &lt;ul class="nav nav-tabs"&gt;
+              &lt;li class="active"&gt;&lt;a href="#home"&gt;首页&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div class="tab-content"&gt;
+              &lt;div class="tab-pane active" id="home"&gt;这是一个静态标签页。&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h3>
+<a name="%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6" class="anchor" href="#%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6"><span class="octicon octicon-link"></span></a>添加事件</h3>
+
+<pre><code>$(function(){
+    $(".nav-tabs").tabx();
+    $('.nav-list a').click(function (e) {
+          e.preventDefault();
+        $(".nav-tabs").tabx("add",{
+            id : $(this).attr("href").substr(1),
+            title: $(this).text(),
+            href: $(this).attr("link")
+        });
+    });
+});
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Bootstrap-tabx maintained by <a href="https://github.com/hanwei59">hanwei59</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
