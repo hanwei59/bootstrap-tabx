@@ -1,0 +1,54 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" href="http://pic.ofcard.com/bootstrap/css/bootstrap.min.css" media="all" />
+	<script type="text/javascript" src="http://pic.ofcard.com/jslib/jquery/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="http://pic.ofcard.com/jslib/jquery/frame/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-tabx.css"/>
+    <script type="text/javascript" src="js/bootstrap-tabx.js"></script>
+	
+	<script type="text/javascript">
+	$(function(){
+        $(".nav-tabs").tabx();
+		$('.nav-list a').click(function (e) {
+			  e.preventDefault();
+            $(".nav-tabs").tabx("add",{
+                id : $(this).attr("href").substr(1),
+                title: $(this).text(),
+                href: $(this).attr("link")
+            });
+		});
+		
+	});
+	
+	</script>
+</head>
+<body>
+&nbsp;
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<ul class="nav nav-list">
+					<li><a href="#tab3" link="http://www.ofpay.com">欧飞网</a></li>
+					<li><a href="#tab4" link="http://www.qianmi.com">千米网</a></li>
+					<li><a href="#tab5" link="http://www.gonghuo.com">供货网</a></li>
+				</ul>
+			</div>
+			<div class="span10">
+		        <ul class="nav nav-tabs">
+				  <li class="active"><a href="#home">首页</a></li>
+				</ul>
+				<div class="tab-content">
+				  <div class="tab-pane active" id="home">这是一个静态标签页。</div>
+				</div>
+		    </div>
+		</div>
+		
+	</div>
+</body>
+
+</html>

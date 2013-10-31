@@ -1,0 +1,14 @@
+.nav-tabs>li>a{
+	padding-right: 18px;
+}
+.nav-tabs>li>a.close{
+	padding-right: 3px !important;
+	padding-left: 3px !important;
+	border-left: 0px;
+}
+.nav-tabs>.active>a.close:hover{
+	border-left: 0px;
+}
+.tab-pane{
+	height: 650px;
+}
