@@ -1,6 +1,9 @@
 bootstrap-tabx
 ==============
 bootstrap-tabx为bootstrap-tab添加了新增标签页和关闭标签页的功能。
+
+[示例Demo](http://hanwei59.github.io/bootstrap-tabx/) http://hanwei59.github.io/bootstrap-tabx/
+
 ##用法示例
 ###静态Html
 
