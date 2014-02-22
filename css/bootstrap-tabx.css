@@ -8,6 +8,7 @@
 }
 .nav-tabs>.active>a.close:hover{
 	border-left: 0px;
+	cursor: pointer;
 }
 .tab-pane{
 	height: 650px;

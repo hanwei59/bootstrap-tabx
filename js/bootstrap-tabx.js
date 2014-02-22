@@ -38,31 +38,34 @@
             $("<a class='close' href='#'>&times;</a>").prependTo(tabItem.filter("[closeable=true]").parent())
                 .click(function(e){
                     e.preventDefault();
-                    var id = $(this).next().attr("href").substr(1);
+                    var id = $(this).next().attr("href").substr('#tab_'.length);
+                    console.log(id);
                     that.removeById(id);
                 });
         },
         add: function(option){
+            var tabId = "tab_"+option["id"];
             //如果对应ID的tab页已存在
-            if($(".tab-content #"+option["id"]).length>0){
+            if($(".tab-content #"+tabId).length>0){
                 //激活对应ID的tab页
-                $('.nav-tabs>li>a[href=#'+option["id"]+']').tab('show');
+                $('.nav-tabs>li>a[href=#'+tabId+']').tab('show');
                 return;
             }
             var closeable = true;
             if(option["closeable"] === false || option["closeable"] == "false"){
                 closeable = false;
             }
-            var tabLi = $("<li><a href='#"+option["id"]+"'"+(closeable?"closeable='true'":"")+" >"+option["title"]+"</a></li>").appendTo(this.$element);
+            var tabLi = $("<li><a href='#"+tabId+"'"+(closeable?"closeable='true'":"")+" >"+option["title"]+"</a></li>").appendTo(this.$element);
             this.bindEvent(tabLi);
             var content = option["content"];
             if(option["href"]){
-                content = '<iframe src="'+option["href"]+'" id="'+option["id"]+'" width="100%" height="100%" scrolling="auto" frameborder="0" marginwidth="0" marginheight="0" style="overflow: hidden;"></iframe>';
+                content = '<iframe src="'+option["href"]+'" id="iframe_'+option["id"]+'" width="100%" height="100%" scrolling="auto" frameborder="0" marginwidth="0" marginheight="0" style="overflow: hidden;"></iframe>';
             }
-            $(".tab-content").append("<div class='tab-pane' id='"+option["id"]+"'>"+content+"</div>");
+            $(".tab-content").append("<div class='tab-pane' id='"+tabId+"'>"+content+"</div>");
             tabLi.find("a").not(".close").tab('show');
         },
-        removeById: function(tabId){
+        removeById: function(id){
+            var tabId = "tab_"+id;
             //删除tab内容
             $("#"+tabId).remove();
             var tabItem = $('.nav-tabs>li>a[href=#'+tabId+']');
