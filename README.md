@@ -11,9 +11,9 @@ bootstrap-tabx为bootstrap-tab添加了新增标签页和关闭标签页的功�
 		<div class="row-fluid">
 			<div class="span2">
 				<ul class="nav nav-list">
-					<li><a href="#tab3" link="http://www.ofpay.com">欧飞网</a></li>
-					<li><a href="#tab4" link="http://www.qianmi.com">千米网</a></li>
-					<li><a href="#tab5" link="http://www.gonghuo.com">供货网</a></li>
+					<li><a id="ofpay" href="http://www.ofpay.com">欧飞网</a></li>
+					<li><a id="qianmi" href="http://www.qianmi.com">千米网</a></li>
+					<li><a id="gonghuo" href="http://www.gonghuo.com">供货网</a></li>
 				</ul>
 			</div>
 			<div class="span10">
@@ -34,9 +34,9 @@ bootstrap-tabx为bootstrap-tab添加了新增标签页和关闭标签页的功�
 		$('.nav-list a').click(function (e) {
 			  e.preventDefault();
             $(".nav-tabs").tabx("add",{
-                id : $(this).attr("href").substr(1),
+                id : $(this).attr("id"),
                 title: $(this).text(),
-                href: $(this).attr("link")
+                href: $(this).attr("href")
             });
 		});
 	});
